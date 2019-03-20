@@ -1,1 +1,34 @@
 <h1>Edit a Character</h1>
+
+<hr>
+
+<div *ngIf="character">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editCharacterForm">
+        <div>
+            <div hidden>
+                <mat-form-field>
+                    <input matInput placeholder="CharacterId" formControlName="CharacterId" type="CharacterId" required [value]="character.CharacterId"/>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="CharacterName" formControlName="CharacterName" type="CharacterName" required [value]="character.CharacterName"/>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="House" formControlName="House" type="House" required [value]="character.House"/>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="ImageLink" formControlName="ImageLink" type="ImageLink" required [value]="character.ImageLink"/>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="sumbit">Save</button>
+        <br>
+        <a mat-button routerLink="/characters">Back To List</a>
+    </form>
+</div>
+

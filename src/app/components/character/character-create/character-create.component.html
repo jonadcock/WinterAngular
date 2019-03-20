@@ -1,6 +1,8 @@
 <h1>Create a Character.</h1>
 <hr>
-
+<div class="container">
+<img src="https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F05%2FGOT125-32x18-MAIN-SITE.jpg&c=sc&w=736&h=485" class="center">
+</div>
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="characterForm">
   <div>
     <div>
@@ -20,6 +22,6 @@
       </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Character</button>
+  <br>
+  <a mat-button routerLink="/characters">Back to List</a>
 </form>
-
-<a mat-button routerLink="/characters">Back to List</a>

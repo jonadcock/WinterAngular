@@ -33,6 +33,10 @@ h2 {
     #303031);
 }
 
+h5 {
+    text-align: center;
+}
+
 h4 {
     text-shadow: 0 0 5px rgb(14, 13, 13), 0 0 7px rgb(15, 15, 17);
     margin-top: 3%;

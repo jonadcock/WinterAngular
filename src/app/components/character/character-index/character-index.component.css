@@ -1,0 +1,31 @@
+img {
+    margin: 20px;
+    border: 2px solid white;
+    border-top-left-radius:75px;
+	border-top-right-radius:75px;
+	border-bottom-left-radius:10px;
+    border-bottom-right-radius:0px;
+    box-shadow: 0px -10px 30px black;
+}
+
+h1{
+    text-align: center;
+}
+
+.createButton {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-row.mat-row {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.mat-cell.mat-cell {
+    font-size: 25px;
+}
+
+mat-header-cell {
+    text-decoration: underline;
+    font-size: 15px;
+}

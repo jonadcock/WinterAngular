@@ -1,5 +1,7 @@
+
 <html>
-<h1>Details</h1>
+<h1>Delete</h1>
+<h5>Are you sure you want to delete this?</h5>
 
 <div *ngIf="character">
     <div class=container>
@@ -7,7 +9,7 @@
         <img [src]="character.ImageLink" alt="character.CharacterName">
         <h4>CharacterId: {{character.CharacterId}}</h4>
       <h4>{{character.House}}</h4>
-      <button mat-button color="accent" routerLink="/characters/edit/{{character.CharacterId}}">Edit</button>
+      <button mat-button color="warn" (click)="onDelete()">Delete</button>
       <button mat-button color="primary" routerLink="/characters">Back To List</button>
     </div>
 </div>

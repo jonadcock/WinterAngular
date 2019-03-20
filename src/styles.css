@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
 
+html {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 body{
     background-image: url("assets/img/fence-snow-trees-65911.jpg");
     background-size: cover;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 input.form-control,input.form-control:focus{
@@ -47,3 +52,69 @@ form{
 div.side-header{
     border:3px solid black;
 }
+
+body {
+    background-color: #00adeb;
+  }
+  #snowflakes {
+    background: none;
+    background-image: url(https://ladynatural.com.mx/archivos/2018/12/s1.png),
+      url(https://ladynatural.com.mx/archivos/2018/12/s2.png),
+      url(https://ladynatural.com.mx/archivos/2018/12/s3.png);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+    -webkit-animation: snow 10s linear infinite;
+    -moz-animation: snow 10s linear infinite;
+    -ms-animation: snow 10s linear infinite;
+    animation: snow 10s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes snow {
+    0% {
+      background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    50% {
+      background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+    100% {
+      background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+  }
+  @-moz-keyframes snow {
+    0% {
+      background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    50% {
+      background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+    100% {
+      background-position: 400px 1000px, 200px 400px, 100px 300px;
+    }
+  }
+  @-webkit-keyframes snow {
+    0% {
+      background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    50% {
+      background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+    100% {
+      background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+  }
+  @-ms-keyframes snow {
+    0% {
+      background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    50% {
+      background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+    100% {
+      background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+  }
+  /*SnowAnimationCredit to SEELEROOTS from Codepen ---> https://codepen.io/SEELEROOTS/pen/EGvGrj8*/

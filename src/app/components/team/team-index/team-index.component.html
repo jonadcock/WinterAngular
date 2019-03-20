@@ -1,0 +1,44 @@
+<h1>Teams</h1>
+<a mat-raised-button color="primary" routerLink="/team/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail" routerLink="/team"><i class="material-icons">account_circle</i></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="TeamId">
+      <mat-header-cell *matHeaderCellDef> Team # </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="TeamName">
+      <mat-header-cell *matHeaderCellDef> Team Name </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TeamName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="TotalPoints">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Total Points </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail"> {{teamDetail.TotalPoints}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Characters">
+      <mat-header-cell *matHeaderCellDef> Characters: </mat-header-cell>
+      <mat-cell *matCellDef="let  teamDetail">{{teamDetail.Characters}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let teamDetail">
+        <i mat-icon class="material-icons">edit</i>
+        <i class="material-icons">delete</i>
+      </mat-cell>
+    </ng-container>
+
+  </mat-table>
+</div>

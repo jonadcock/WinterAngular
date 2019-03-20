@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class CharacterIndexComponent implements OnInit {
 
-  columnNames = ['details', 'CharacterId', 'CharacterName', 'House', 'ImageLink', 'buttons'];
+  columnNames = ['ImageLink', 'CharacterName', 'House', 'buttons'];
 
   constructor(private _characterService: CharacterService) { }
 

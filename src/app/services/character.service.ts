@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CreateCharacter } from '../models/CreateCharacter';
 import { CharacterDetail } from '../models/CharacterDetail';
+import { Character } from '../models/Character';
 
 const ApiUrl = 'https://westerosfantasyleague.azurewebsites.net/api';
 
@@ -22,7 +23,7 @@ export class CharacterService {
         return this._http.post(`${ApiUrl}/Character`, character, {headers: this.getHeaders() });
     }
 
-    updateCharacter(character: CharacterDetail) {
+    updateCharacter(character: Character) {
         return this._http.put(`${ApiUrl}/Character`, character, {headers: this.getHeaders() });
     }
 

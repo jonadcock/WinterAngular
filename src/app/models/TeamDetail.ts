@@ -3,6 +3,6 @@ import { CharacterListItem } from './CharacterListItem';
 export interface TeamDetail {
     TeamId: number;
     TeamName: string;
-    TotalPoints: number;
+    TotalPoints?: number;
     Characters: Array<CharacterListItem>;
 }

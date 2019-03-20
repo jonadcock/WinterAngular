@@ -1,5 +1,5 @@
 <h1>Character Index</h1>
-<a mat-raised-button color="primary" routerLink="/characters/create">Create New</a>
+<a mat-raised-button class="createButton" color="primary" routerLink="/characters/create">Create New</a>
 <hr>
 
 <div>
@@ -7,15 +7,10 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let character" routerLink="/characters/detail/{{character.CharacterId}}"><i class="material-icons">account_circle</i></mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="CharacterId">
-      <mat-header-cell *matHeaderCellDef> Character # </mat-header-cell>
+    <!-- <ng-container matColumnDef="CharacterId">
+      <mat-header-cell *matHeaderCellDef> Character ID# </mat-header-cell>
       <mat-cell *matCellDef="let character"> {{character.CharacterId}} </mat-cell>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="CharacterName">
       <mat-header-cell *matHeaderCellDef> Character Name </mat-header-cell>
@@ -28,15 +23,16 @@
     </ng-container>
 
     <ng-container matColumnDef="ImageLink">
-      <mat-header-cell *matHeaderCellDef> Image Url </mat-header-cell>
-      <mat-cell *matCellDef="let character"> {{character.ImageLink}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let character"><img [src]="character.ImageLink" style="width:40%; height: 40%; border-radius: 50%;" routerLink="/characters/detail/{{character.CharacterId}}"> </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="buttons">
-      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Edit / Delete / Details </mat-header-cell>
       <mat-cell *matCellDef="let character">
-        <i mat-icon class="material-icons">edit</i>
-        <i class="material-icons">delete</i>
+        <i mat-icon class="material-icons" routerLink="/characters/edit/{{character.CharacterId}}">edit</i>
+        <i class="material-icons" routerLink="/characters/delete/{{character.CharacterId}}">delete</i>
+        <i class="material-icons" routerLink="/characters/detail/{{character.CharacterId}}">account_circle</i>
       </mat-cell>
     </ng-container>
 
