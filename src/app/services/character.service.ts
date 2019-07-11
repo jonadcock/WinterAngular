@@ -4,7 +4,7 @@ import { CreateCharacter } from '../models/CreateCharacter';
 import { CharacterDetail } from '../models/CharacterDetail';
 import { Character } from '../models/Character';
 
-const ApiUrl = 'https://westerosfantasyleague.azurewebsites.net/api';
+const ApiUrl = 'https://winterclienttfraley.azurewebsites.net/api';
 
 @Injectable()
 

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CreateTeam } from '../models/CreateTeam';
 import { TeamDetail } from '../models/TeamDetail';
 
-const ApiUrl = 'https://westerosfantasyleague.azurewebsites.net/api';
+const ApiUrl = 'https://winterclienttfraley.azurewebsites.net/api';
 
 @Injectable()
 
