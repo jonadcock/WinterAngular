@@ -1,27 +1,40 @@
 <h1>Create a Character.</h1>
+
 <hr>
+
 <div class="container">
-<img src="https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F05%2FGOT125-32x18-MAIN-SITE.jpg&c=sc&w=736&h=485" class="center">
+
+  <img
+    src="https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwinteriscoming.net%2Ffiles%2F2018%2F05%2FGOT125-32x18-MAIN-SITE.jpg&c=sc&w=736&h=485"
+    class="center">
 </div>
+
 <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="characterForm">
   <div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Character Name" formControlName="CharacterName" type="CharacterName" required/>
+        <input matInput placeholder="Character Name" formControlName="CharacterName" type="CharacterName" required />
       </mat-form-field>
     </div>
+
     <div>
       <mat-form-field>
-        <input matInput placeholder="House" formControlName="House" type="House" required/>
+        <input matInput placeholder="House" formControlName="House" type="House" required />
       </mat-form-field>
     </div>
+
     <div>
-        <mat-form-field>
-          <input matInput placeholder="Image Link (URL)" formControlName="ImageLink" type="ImageLink" required/>
-        </mat-form-field>
-      </div>
+      <mat-form-field>
+        <input matInput placeholder="Image Link (URL)" formControlName="ImageLink" type="ImageLink" required />
+      </mat-form-field>
+    </div>
+  
   </div>
+  
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Character</button>
+  
   <br>
+  
   <a mat-button routerLink="/characters">Back to List</a>
+
 </form>
