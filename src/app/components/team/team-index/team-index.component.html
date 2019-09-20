@@ -2,18 +2,20 @@
 <a *ngIf="loggedInCheck()" mat-raised-button class="createButton button text-light" routerLink="/team/create">Create New</a>
 <hr>
 
-<h2 *ngIf="!loggedInCheck()"> Log in to view teams. </h2>
+<h2 *ngIf="!loggedInCheck()"> Log in to create a team. </h2>
 
 
-<div *ngIf="loggedInCheck()">
+<!-- <div *ngIf="loggedInCheck()"> -->
+<div>
   <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
 
     <mat-header-row *matHeaderRowDef="teamColumnNames" class="teamTableRow"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: teamColumnNames;" class="teamTableRow" ></mat-row>
+    <mat-row *matRowDef="let row; columns: teamColumnNames;" class="teamTableRow"></mat-row>
 
     <ng-container matColumnDef="TeamName">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Team Name </mat-header-cell>
-      <mat-cell *matCellDef="let teamDetail" class="clickable" routerLink="/team/detail/{{teamDetail.TeamId}}"> {{teamDetail.TeamName}} </mat-cell>
+      <mat-cell *matCellDef="let teamDetail" class="clickable" routerLink="/team/detail/{{teamDetail.TeamId}}">
+        {{teamDetail.TeamName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="TotalPoints">
@@ -24,11 +26,12 @@
     <ng-container matColumnDef="Characters">
       <mat-header-cell *matHeaderCellDef> Characters: </mat-header-cell>
       <mat-cell *matCellDef="let  teamDetail">
-        <img *ngFor="let character of teamDetail.Characters" src="{{ character.ImageLink }}" class="thumbnailImages clickable" routerLink="/characters/detail/{{ character.CharacterId }}">
+        <img *ngFor="let character of teamDetail.Characters" src="{{ character.ImageLink }}"
+          class="thumbnailImages clickable" routerLink="/characters/detail/{{ character.CharacterId }}">
       </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="buttons">
+    <ng-container *ngIf="loggedInCheck()" matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let teamDetail">
         <i mat-icon class="material-icons clickable">edit</i>

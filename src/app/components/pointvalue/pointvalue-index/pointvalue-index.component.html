@@ -1,11 +1,11 @@
 <h1>Point Value System</h1>
-<a *ngIf="authCheck()" mat-raised-button class="createButton button text-light" routerLink="/pointvalues/create">Create
-  New</a>
+<a *ngIf="authCheck()" mat-raised-button class="createButton button text-light" routerLink="/pointvalues/create">Create New</a>
 <hr>
 
-<h2 *ngIf="!loggedInCheck()"> Log in to view points. </h2>
+<!-- <h2 *ngIf="!loggedInCheck()"> Log in to view points. </h2> -->
 
-<table *ngIf="loggedInCheck()" class="tg">
+<!-- <table *ngIf="loggedInCheck()" class="tg"> -->
+<table class="tg">
   <tr>
     <th class="tg-qhx5" colspan="2">Character Scoring System</th>
     <th class="tg-rku8">+/-</th>
@@ -39,7 +39,8 @@
 
 <br>
 
-<div *ngIf="loggedInCheck()">
+<!-- <div *ngIf="loggedInCheck()"> -->
+<div>
   <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
     <mat-header-row *matHeaderRowDef="pointValueColumnNames" class="my-2"></mat-header-row>
     <mat-row *matRowDef="let row; columns: pointValueColumnNames;" class="my-2"></mat-row>
@@ -88,7 +89,7 @@
           *ngIf="pointValue.BigKill === false">panorama_fish_eye</i></mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="buttons">
+    <ng-container *ngIf="loggedInCheck()" matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> Edit / Delete </mat-header-cell>
       <mat-cell *matCellDef="let pointValue">
         <div class="">

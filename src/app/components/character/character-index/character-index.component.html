@@ -3,15 +3,15 @@
 <a *ngIf="authCheck()" mat-raised-button class="createButton button text-light" routerLink="/characters/create">Create New</a>
 <hr>
 
-<h2 *ngIf="!loggedInCheck()"> Log in to view characters. </h2>
+<!-- <h2 *ngIf="!loggedInCheck()"> Log in to view characters. </h2> -->
 
-<div *ngIf="loggedInCheck()" class="container">
-  <img
-    src="assets/img/houses/3eyedraven.png"
-    class="center" style="width: 20%;">
+<!-- <div *ngIf="loggedInCheck()" class="container"> -->
+<div class="container">
+  <img src="assets/img/houses/3eyedraven.png" class="center" style="width: 20%;">
 </div>
 <br>
-<div *ngIf="loggedInCheck()">
+<!-- <div *ngIf="loggedInCheck()"> -->
+<div>
   <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear>
     <mat-header-row *matHeaderRowDef="characterColumnNames" class="my-2"></mat-header-row>
     <mat-row *matRowDef="let row; columns: characterColumnNames;" class="my-2"></mat-row>
@@ -25,27 +25,38 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> House / Affiliation </mat-header-cell>
       <mat-cell *matCellDef="let character">{{character.House}}
 
-          <div *ngIf="character.House === 'House Stark'"><img src="assets/img/houses/stark.png" class="housestark" style="width: 15%"> </div>
+        <div *ngIf="character.House === 'House Stark'"><img src="assets/img/houses/stark.png" class="housestark"
+            style="width: 15%"> </div>
 
-          <div *ngIf="character.House === 'House Targaryen'"><img src="assets/img/houses/targaryen.png" class="housetargaryen" style="width: 18%"> </div>
+        <div *ngIf="character.House === 'House Targaryen'"><img src="assets/img/houses/targaryen.png"
+            class="housetargaryen" style="width: 18%"> </div>
 
-          <div *ngIf="character.House === 'House Lannister'"><img src="assets/img/houses/lannister.png" class="houselannister" style="width: 16%"> </div>
-  
-          <div *ngIf="character.House === 'White Walkers'"><img src="assets/img/houses/whitewalker.png" class="whitewalkers" style="width: 18%"> </div>
-  
-          <div *ngIf="character.House === 'Brotherhood Without Banners'"> <img src="assets/img/houses/brotherhoodwithoutbanners.png" class="brotherhood" style="width: 13%;"> </div>
-  
-          <div *ngIf="character.House === 'House Greyjoy'"> <img src="assets/img/houses/greyjoy.png" class="greyjoy" style="width: 13%;"></div>
-  
-          <div *ngIf="character.House === 'House Stokeworth'"> <img src="assets/img/houses/stokeworth.png" class="stokeworth" style="width: 13%;"> </div>
-  
-          <div *ngIf="character.House === 'House Mormont'"> <img src="assets/img/houses/mormont.png" class="mormont" style="width: 13%;"> </div>
-  
-          <div *ngIf="character.House === 'House Clegane'"> <img src="assets/img/houses/clegane.png" class="clegane" style="width: 13%;"> </div>
-  
-          <div *ngIf="character.House === 'House Tarth'"> <img src="assets/img/houses/tarth.png" class="tarth" style="width: 13%;"> </div>
-  
-          <div *ngIf="character.House === 'Free Folk'"> <img src="assets/img/houses/freefolk.png" class="freefolk" style="width: 13%;"> </div>
+        <div *ngIf="character.House === 'House Lannister'"><img src="assets/img/houses/lannister.png"
+            class="houselannister" style="width: 16%"> </div>
+
+        <div *ngIf="character.House === 'White Walkers'"><img src="assets/img/houses/whitewalker.png"
+            class="whitewalkers" style="width: 18%"> </div>
+
+        <div *ngIf="character.House === 'Brotherhood Without Banners'"> <img
+            src="assets/img/houses/brotherhoodwithoutbanners.png" class="brotherhood" style="width: 13%;"> </div>
+
+        <div *ngIf="character.House === 'House Greyjoy'"> <img src="assets/img/houses/greyjoy.png" class="greyjoy"
+            style="width: 13%;"></div>
+
+        <div *ngIf="character.House === 'House Stokeworth'"> <img src="assets/img/houses/stokeworth.png"
+            class="stokeworth" style="width: 13%;"> </div>
+
+        <div *ngIf="character.House === 'House Mormont'"> <img src="assets/img/houses/mormont.png" class="mormont"
+            style="width: 13%;"> </div>
+
+        <div *ngIf="character.House === 'House Clegane'"> <img src="assets/img/houses/clegane.png" class="clegane"
+            style="width: 13%;"> </div>
+
+        <div *ngIf="character.House === 'House Tarth'"> <img src="assets/img/houses/tarth.png" class="tarth"
+            style="width: 13%;"> </div>
+
+        <div *ngIf="character.House === 'Free Folk'"> <img src="assets/img/houses/freefolk.png" class="freefolk"
+            style="width: 13%;"> </div>
       </mat-cell>
     </ng-container>
 
